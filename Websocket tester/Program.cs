@@ -57,9 +57,9 @@ namespace Websocket_tester
         {
             Console.WriteLine("> Initializing server");
 
-            uint port = 8080;
+            uint port = 443;
             var server = new WebSocketServer((int)port, true);
-            server.SslConfiguration.ServerCertificate = new X509Certificate2(@"C:\Users\jeffr\Downloads\Websocket tester\Websocket tester\certificate.pfx", "1234");
+            server.SslConfiguration.ServerCertificate = new X509Certificate2("/root/certificate.pfx", "2022MaMaProd");
             server.AddWebSocketService<Echo>("/");
             server.Start();
 
